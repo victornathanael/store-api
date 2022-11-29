@@ -108,6 +108,7 @@ async function createReview(req, res, next) {
             throw new Error('Product ID e Review são obrigatórios');
         }
         await ProductService.createReview(params.review, params.productId);
+        logger.info(`POST /product/review/`);
         res.end();
     } catch (err) {
         throw err;
@@ -117,9 +118,31 @@ async function createReview(req, res, next) {
 async function deleteReview(req, res, next) {
     try {
         await ProductService.deleteReview(req.params.id, req.params.index);
+        logger.info(
+            `DELETE /product/${req.params.id}/review/${req.params.index}`
+        );
+
         res.end();
     } catch (err) {
         throw err;
+    }
+}
+
+async function getProductsInfo(req, res, next) {
+    try {
+        res.send(await ProductService.getProductsInfo());
+        logger.info(`GET /product/info`);
+    } catch (err) {
+        next(err);
+    }
+}
+
+async function deleteProductInfo(req, res, next) {
+    try {
+        res.send(await ProductService.deleteProductInfo(req.params.id));
+        logger.info(`DELETE /product/info`);
+    } catch (err) {
+        next(err);
     }
 }
 
@@ -133,4 +156,6 @@ export default {
     updateProductInfo,
     createReview,
     deleteReview,
+    getProductsInfo,
+    deleteProductInfo,
 };
