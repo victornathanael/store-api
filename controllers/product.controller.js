@@ -101,6 +101,28 @@ async function updateProductInfo(req, res, next) {
     }
 }
 
+async function createReview(req, res, next) {
+    try {
+        let params = req.body;
+        if (!params.productId || !params.review) {
+            throw new Error('Product ID e Review são obrigatórios');
+        }
+        await ProductService.createReview(params.review, params.productId);
+        res.end();
+    } catch (err) {
+        throw err;
+    }
+}
+
+async function deleteReview(req, res, next) {
+    try {
+        await ProductService.deleteReview(req.params.id, req.params.index);
+        res.end();
+    } catch (err) {
+        throw err;
+    }
+}
+
 export default {
     createProduct,
     getProducts,
@@ -109,4 +131,6 @@ export default {
     updateProduct,
     createProductInfo,
     updateProductInfo,
+    createReview,
+    deleteReview,
 };
