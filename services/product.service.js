@@ -39,6 +39,10 @@ async function createProductInfo(productInfo) {
     await productInfoRepository.createProductInfo(productInfo);
 }
 
+async function updateProductInfo(productInfo) {
+    await productInfoRepository.updateProductInfo(productInfo);
+}
+
 export default {
     createProduct,
     getProducts,
@@ -46,4 +50,5 @@ export default {
     deleteProduct,
     updateProduct,
     createProductInfo,
+    updateProductInfo,
 };
