@@ -33,4 +33,19 @@ async function updateProductInfo(productInfo) {
     }
 }
 
-export default { createProductInfo, updateProductInfo };
+async function getProductInfo(productId) {
+    const client = getClient();
+    try {
+        await client.connect();
+        return await client
+            .db('store')
+            .collection('productInfo')
+            .findOne({ productId });
+    } catch (err) {
+        throw err;
+    } finally {
+        await client.close();
+    }
+}
+
+export default { createProductInfo, updateProductInfo, getProductInfo };

@@ -15,7 +15,9 @@ async function getProducts() {
 }
 
 async function getProduct(id) {
-    return await ProductRepository.getProduct(id);
+    const product = await ProductRepository.getProduct(id);
+    product.info = await productInfoRepository.getProductInfo(parseInt(id));
+    return product;
 }
 
 async function deleteProduct(id) {
