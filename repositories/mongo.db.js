@@ -1,10 +1,13 @@
-import mongodb from 'mongodb';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();
 
-function getClient() {
+async function connect() {
     const uri = process.env.MONGO_DB_CONN_STRING;
-    return new mongodb.MongoClient(uri);
+    return await mongoose.connect(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    });
 }
 
-export { getClient };
+export { connect };
