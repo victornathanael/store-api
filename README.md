@@ -3,6 +3,14 @@
 ## 🚀 Descrição
 Essa api foi desenvolvida em [Node.js](https://nodejs.org/pt-br/) usando os bancos de dados [PostgreSQL](https://www.postgresql.org/) e [MongoDB](https://www.mongodb.com/), e tem como objetivo gerenciar uma loja.
 
+ - O PostgreSQL fica responsável por boa parte do banco, assim como no mostra diagrama abaxo:
+
+![image](https://user-images.githubusercontent.com/99601659/204812060-f721aa47-f847-4cb3-a523-573c29dd42c5.png)
+
+- Já o MongoDB está responsável somente pelas operações **/info** e **/review** que serão descritas mais abaixo no tópico 📦 **Product**
+
+## <a name=“section”><a/> Seção
+
 ## 📋 Pré-requisitos
 
 - [Git](https://git-scm.com/)
@@ -156,8 +164,9 @@ DELETE: http://localhost:3000/suppliers/:id
 
 ### 📦 Product
 
+
 - /info são as informações adicionais do produto.
-- /review são os comentários referente ao produto.
+- /review são comentários dos clientes referente ao produto.
 
 - #### CREATE
 Adiciona um novo produto de acordo com o JSON enviado no body
