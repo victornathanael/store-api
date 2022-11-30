@@ -22,10 +22,10 @@ global.logger = winston.createLogger({
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use('/client', clientsRouter);
-app.use('/product', productsRouter);
-app.use('/supplier', suppliersRouter);
-app.use('/sale', salesRouter);
+app.use('/clients', clientsRouter);
+app.use('/products', productsRouter);
+app.use('/suppliers', suppliersRouter);
+app.use('/sales', salesRouter);
 app.use((err, req, res, next) => {
     logger.error(`${req.method} ${req.baseUrl} - ${err.message}`);
     res.status(400).send({ error: err.message });
