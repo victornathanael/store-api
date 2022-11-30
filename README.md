@@ -5,7 +5,8 @@ Essa api foi desenvolvida em [Node.js](https://nodejs.org/pt-br/) usando os banc
 
  - O PostgreSQL fica responsável por boa parte do banco, assim como no mostra diagrama abaxo:
 
-![image](https://user-images.githubusercontent.com/99601659/204812060-f721aa47-f847-4cb3-a523-573c29dd42c5.png)
+![image](https://user-images.githubusercontent.com/99601659/204855763-5d2877ed-e7c9-4186-b955-6a6b86fcb461.png)
+
 
 - Já o MongoDB está responsável somente pelas operações **/info** e **/review** que serão descritas mais abaixo no tópico 📦 **Product**
 
