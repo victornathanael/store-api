@@ -26,7 +26,7 @@ Essa api foi desenvolvida em [Node.js](https://nodejs.org/pt-br/) usando os banc
 ### Clone esse repositório
 
 ``` 
-git clone https://github.com/VictorNathanael/store-api
+git clone https://github.com/VictorNathanael/store-api.git
 ```
 ### Acesse a pasta do projeto no terminal/cmd
 ```
